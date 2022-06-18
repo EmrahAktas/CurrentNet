@@ -5,6 +5,9 @@
 #include <QMenuBar>
 #include <QAction>
 
+#include "drawingscene.h"
+#include "drawingview.h"
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -23,6 +26,12 @@ private:
     QAction* newFileAction;
     void createMenus();
     void createFileActions();
+    void createViewActions();
+    void createEditActions();
+
+    //Scene and View
+    DrawingScene* scene;
+    DrawingView* view;
 
 private slots:
     void onOpenFile();

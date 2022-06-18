@@ -11,10 +11,15 @@ CONFIG += c++11
 DESTDIR = bin
 
 SOURCES += \
+    drawingscene.cpp \
+    drawingview.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    enumarations.h \
+    drawingscene.h \
+    drawingview.h \
     mainwindow.h
 
 # Default rules for deployment.

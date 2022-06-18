@@ -1,11 +1,12 @@
 #include "mainwindow.h"
 
 #include <QApplication>
+#include <QScreen>
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
-    return a.exec();
+    QApplication application(argc, argv);
+    MainWindow mainWindow;
+    mainWindow.showMaximized();
+    return application.exec();
 }

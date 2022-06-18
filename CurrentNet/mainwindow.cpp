@@ -2,12 +2,13 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
-
     createMenus();
     createFileActions();
 
-
-
+    scene = new DrawingScene(this);
+    scene->setSceneRect(QRectF(0, 0, 1000, 1000));
+    view = new DrawingView(scene, this);
+    setCentralWidget(view);
 
     setWindowTitle(tr("CurrentNet"));
 }
@@ -25,8 +26,10 @@ void MainWindow::createMenus()
     fileMenu->addAction(newFileAction);
 
     viewMenu = menuBar()->addMenu(tr("&View"));
+    createViewActions();
 
     editMenu = menuBar()->addMenu(tr("&Edit"));
+    createEditActions();
 }
 
 void MainWindow::createFileActions()
@@ -38,6 +41,16 @@ void MainWindow::createFileActions()
     newFileAction = new QAction(tr("New File"), this);
     newFileAction->setShortcut(tr("Ctrl+N"));
     connect(newFileAction, &QAction::triggered, this, &MainWindow::onCreateNewBlankPage);
+}
+
+void MainWindow::createViewActions()
+{
+
+}
+
+void MainWindow::createEditActions()
+{
+
 }
 
 void MainWindow::onOpenFile()
